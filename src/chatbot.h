@@ -26,10 +26,9 @@ public:
     ChatBot();                     // constructor WITHOUT memory allocation
     ChatBot(std::string filename); // constructor WITH memory allocation
     ~ChatBot();
-
     //// STUDENT CODE
     ////
-
+    ChatBot(ChatBot const &other) noexcept; // copy constructor
     ////
     //// EOF STUDENT CODE
 

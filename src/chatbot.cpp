@@ -44,7 +44,14 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
-
+// Copy Constuctor
+ChatBot::ChatBot(ChatBot const &other) noexcept{
+    std::cout << "ChatBot Copy Constuctor" <<std::endl;
+    _image = new wxBitmap(*other._image);
+    *_currentNode = *other._currentNode;
+    *_rootNode = *other._rootNode;
+    *_chatLogic = *other._chatLogic;
+}
 ////
 //// EOF STUDENT CODE
 
