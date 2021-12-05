@@ -47,10 +47,13 @@ ChatBot::~ChatBot()
 // Copy Constuctor
 ChatBot::ChatBot(ChatBot const &other) noexcept{
     std::cout << "ChatBot Copy Constuctor" <<std::endl;
+    _rootNode = other._rootNode;
+
+    _chatLogic = other._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
+
     _image = new wxBitmap(*other._image);
-    *_currentNode = *other._currentNode;
-    *_rootNode = *other._rootNode;
-    *_chatLogic = *other._chatLogic;
+    *_image = *other._image;
 }
 
 // Copy assignment
